@@ -8,7 +8,7 @@ function images_lib:generate_textures()
 	
         if images_lib.textures[name] then draw.UpdateTexture(images_lib.textures[name][3], img_rgba) else
             local texture = draw.CreateTexture(img_rgba, width, height)
-            images_lib.textures[name] = { width, height, texture, img_rgba }
+            images_lib.textures[name] = { width / 2, height / 2, texture, img_rgba }
         end
     end
 end
