@@ -4,7 +4,7 @@ images_lib.textures = { }
 
 function images_lib:generate_textures(cls)
     for name, data in pairs(cls) do
-		local img_rgba, width, height = common.RasterizeSVG(data[3])
+	local img_rgba, width, height = common.RasterizeSVG(data[3])
 	
         if images_lib.textures[name] then draw.UpdateTexture(images_lib.textures[name][3], img_rgba) else
             local texture = draw.CreateTexture(img_rgba, width, height)
