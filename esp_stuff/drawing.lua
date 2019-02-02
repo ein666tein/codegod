@@ -22,7 +22,7 @@ function _esp:get_bounding_box(player)
     top_3d = { player:GetAbsOrigin() }
 	top_3d[3] = top_3d[3] + 79 - 14 * duck_amt - angels / 89 * 3
 
-    screen_pos, screen_top = WorldToScreen(pos_3d), WorldToScreen(top_3d)
+    screen_pos, screen_top = _esp:WorldToScreen(pos_3d), _esp:WorldToScreen(top_3d)
     if screen_pos ~= nil and screen_top ~= nil then
         local height = screen_pos[2] - screen_top[2]
         local width = height / 2.2
