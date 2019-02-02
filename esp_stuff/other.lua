@@ -51,13 +51,13 @@ end
 function _misc:is_valid(ent, menu)
     local entlocal = entities.GetLocalPlayer()
 
-    local team_ent = ent:GetIndex()
-    local team_local = entlocal:GetTeamNumber()
-    local is_enemy = (team_local ~= team_ent)
-
-    if entlocal == nil or team_ent == team_local then
+    if entlocal:GetIndex() == ent:GetIndex() then
         return false
     end
 
+    local team_ent = ent:GetTeamNumber()
+    local team_local = entlocal:GetTeamNumber()
+    local is_enemy = (team_local ~= team_ent)
+    
     return (is_enemy or not is_enemy and menu:get("main", "teammates"))
 end
